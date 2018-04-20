@@ -1,0 +1,13 @@
+<h3>Edit a Chore</h3>
+<form (submit) = "editSubmit()">
+{{ editChore | json }}
+Title:<input type="text" name="editTask.title" [(ngModel)] = "editChore[0].title">
+Description: <input type="text" name="editTask.description" [(ngModel)] = "editChore[0].description">
+<input type="submit" name="Edit Task">
+	
+
+
+</form>
+<p>
+  beta works!
+</p>

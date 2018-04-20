@@ -1,0 +1,41 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="title" style="text-align:center">
+  
+
+
+
+  <h1>
+    Welcome to the Chores Page!
+  </h1>
+
+<router-outlet></router-outlet> 
+
+  
+
+</div>
+
+<div>
+  <h2>Create a Chore</h2>
+  <form (submit) = "onSubmit()" class= "postForm">
+    <p>{{ newChore | json }}</p>
+    Title: <input type="text" name="newChore.title" [(ngModel)]= "newChore.title"/>
+    Description: <input type="text" name="newChore.description" [(ngModel)] = "newChore.description" />
+    <input type="submit" name="newChore">
+  </form>
+    
+</div>
+
+<div>
+<h2>Chores List</h2>
+
+
+
+<div *ngFor="let chore of chores"> 
+  <h1>{{ chore.title }} </h1> : {{ chore.description }}  
+  <button [routerLink]="['beta/'+chore._id]" (click) = "editButtonClicked(chore._id)" >Edit</button>
+  <button (click) = "deleteButtonClicked(chore._id)">Delete</button>
+  <!-- <button(click) = "editButtonClick()">Edit Task<button>
+  <button (click) = "deleteButtonClick()">Delete Task<button> -->
+</div>
+
+</div>
